@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html no-auth="true" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>馒头商学院 - 课程</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="市场推广,活动策划,品牌公关,新媒体推广,网络营销">
+    <meta name="description" content="馒头商学院——网络营销学习频道为广大的网络营销人员提供：市场推广、活动策划、品牌公关、新媒体推广等互联网营销相关的学习培训课程，网络营销培训首选馒头商学院！">
+
+    <!--CSS引用-->
+    <link rel="stylesheet" href="/assets/lib/swiper/dist/css/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/lib/fonts/css/fonts.css" />
+    <link rel="stylesheet" href="/assets/static/css/base.css">
+    <link rel="stylesheet" href="/assets/static/css/course.css">
+    <link rel="stylesheet" href="/assets/lib/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/assets/lib/swiper/dist/js/swiper.min.js"></script>
+    <script src="/config/main.js"></script>
+    <script src="/assets/static/js/ctrl/course.js"></script>
+</head>
+<body>
+    <!--顶部-START-->
+    <div class="main">
+        <div class="header">
+            <div class="top clearfix">
+                <div class="top-logo">
+                    <a href="/views/index.html" ></a>
+                </div>
+                <div class="top-title">#向所有人学习#</div>
+                <div class="top-login">
+                    <div style="display: none;">
+                        <a href="javascript:;">注册</a>
+                        <span class="vertical-line">|</span>
+                        <a href="javascript:;">登录</a>
+                    </div>
+                    <div style="display: block">
+                        <a class="user-name" href="javascript:;">懒馒头123456</a>
+                        <div class="user-headimg">
+                            <img src="/assets/static/images/qr-code.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav main">
+                <nav>
+                    <ul>
+                        <li><a href="javascript:;">首页</a></li>
+                        <li><a href="javascript:;">课程</a></li>
+                        <li><a href="javascript:;">企业内训</a></li>
+                        <li><a href="javascript:;" id="app_download">APP下载</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!--下载app窗口-->
+        <div id="download_window" style="position: absolute;width: 663px;height: 443px;top: 150px;left: 50%;margin-left: -330px;z-index: 300;display: none;">
+            <img src="/assets/static/images/download-qr-code.png" alt="">
+        </div>
+    </div>
+    <!--顶部-END-->
+
+    <div class="main">
+        <!--顶部轮播图-START-->
+        <div class="course-slide">
+            <div class="swiper-container">
+                <div class="swiper-wrapper" style="width: 1000px;margin: 0 auto;">
+                    <div class="swiper-slide master-slide" style="width: 1000px;margin-right: 20px;">
+                        <img src="/assets/static/images/course-silde-1.png" alt="">
+                    </div>
+                    <div class="swiper-slide master-slide" style="width: 1000px;margin-right: 20px;">
+                        <img src="/assets/static/images/course-silde-1.png" alt="">
+                    </div>
+                    <div class="swiper-slide master-slide" style="width: 1000px;margin-right: 20px;">
+                        <img src="/assets/static/images/course-silde-1.png" alt="">
+                    </div>
+                    <div class="swiper-slide master-slide" style="width: 1000px;margin-right: 20px;">
+                        <img src="/assets/static/images/course-silde-1.png" alt="">
+                    </div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination myswiper-pagination"></div>
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev fa fa-angle-left"></div>
+                <div class="swiper-button-next fa fa-angle-right"></div>
+                <!-- 如果需要滚动条 -->
+            </div>
+            <div class="course-category" style=" ">
+                <div class="fl">分类</div>
+                <div class="fr">
+                    <a href="javascript:;" class="active">最新</a>
+                    <a href="javascript:;">最热</a>
+                </div>
+            </div>
+        </div>
+        <!--顶部轮播图-END-->
+    </div>
+
+    <!--遮罩-->
+    <div class="myshade" id="myshade"></div>
+</body>
+</html>

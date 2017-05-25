@@ -1,0 +1,10 @@
+本项目为纯html项目
+./assets/static/css/style.css为统一定义样式
+.各页面controller放在 /assets/static/js/ctrl下
+.各页面css放在 /assets/static/css下
+.每个页面都放在pages下
+.每个页面如果用到css或js 不是统一的情况下，都新建一个页面进行引用
+
+	
+
+#最重要的一点是，本项目在服务器上会自动发布，所以严格按照说明来放各资源文件

@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html>
+<html no-auth="true" ng-app="App" ng-controller="goodsCtrl" ng-init="getGoodsDetail()">
+<head>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="description" content="明明可以靠颜值吃饭，可我还在馒头学习。沉迷学习，日渐升值（职）" />
+    <title ng-bind-html="goodsModel.name"></title>
+
+    <!--CSS引用-->
+    <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/lib/angular/angular-loading-bar/loading-bar.min.css" />
+    <link rel="stylesheet" href="/assets/lib/fonts/css/fonts.css" />
+    <link rel="stylesheet" href="/assets/lib/angular/toaster/toaster.min.css" />
+    <link rel="stylesheet" href="/assets/static/css/style.css" />
+    <!--各页面的css引用紧挨着放style.css下面-->
+    <!--JS引用 公用-->
+    <script src="/assets/lib/angular/angular.min.js"></script>
+    <script src="/assets/lib/angular/i18n/angular-locale_zh-cn.js"></script>
+    <script src="/assets/lib/angular/angular-animate.min.js"></script>
+    <script src="/assets/lib/angular/angular-sanitize.min.js"></script>
+    <script src="/assets/lib/angular/angular-cookies.min.js"></script>
+    <script src="/assets/lib/angular/ng-infinite-scroll.min.js"></script>
+    <script src="/assets/lib/angular/toaster/toaster.min.js"></script>
+    <script src="/assets/lib/angular/angular-loading-bar/loading-bar.min.js"></script>
+    <script src="/assets/lib/angular/ng-file-upload/ng-file-upload.min.js"></script>
+    <script src="/assets/lib/moment/moment.min.js"></script>
+    <script src="/assets/lib/moment/zh-cn.js"></script>
+    <script src="/assets/lib/angular/ui-bootstrap-tpls-2.1.3.min.js"></script>
+    <!--项目JS引用-->
+    <script src="/config/main.js"></script>
+    <script src="/assets/static/js/function.js"></script>
+    <script src="/assets/static/js/common.js?v=1"></script>
+    <script src="/assets/static/js/ctrl/goodsCtrl.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>    
+</head>
+<body class="goods ngCloak" ng-cloak>
+    <div class="top-nav font-color-fff" ng-include="'/pages/nav-top.html'" ng-if="isHead"></div>
+    <div class="goods-detail" ng-if="!assignments">
+        <div class="container-fluid scroll_wrap" ng-style="isHead?{top:'35px'}:{top:'0px'}">
+            <div class="row">
+                <div class="col-xs-12 goods-content" ng-bind-html="goodsModel.content |trustHtml" style="padding-left: 0;padding-right: 0;padding-top: 0;margin-bottom: 0px">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 login-tip" ng-if="goodsOldSales&&goodsModel.is_pay==0">
+                    <span>
+                        <span class="old-member-tip">
+                            {{goodsOldSales.name}}
+                            <i class="icons-question old-member-ask" style="font-size: 12px;top: 0px" ng-click="openOldMember($event)"></i>
+                        </span>
+                        <span ng-if="goodsOldSales.discount_type==1&&!logined">老学员手机账号登录可享{{goodsOldSales.value}}折</span>
+                        <span ng-if="goodsOldSales.discount_type==1&&user.isold==1&&logined">哇！欢迎老学员，已享{{goodsOldSales.value}}折</span>
+                        <span ng-if="goodsOldSales.discount_type==2&&!logined">老学员手机账号登录立减{{goodsOldSales.value | currency:undefined:2}}</span>
+                        <span ng-if="goodsOldSales.discount_type==2&&user.isold==1&&logined">哇！欢迎老学员，您已立减{{goodsOldSales.value | currency:undefined:2}}</span>
+                        <span ng-if="user.isold==0&&logined">当前账号还不是老学员</span>
+                    </span>
+                    <span ng-if="!logined" class="dis-p-block pull-right font-color-44c08c" ng-click="gotoLogin()">
+                        马上登录
+                    </span>
+                    <span ng-if="user.isold==0&&logined" class="dis-p-block pull-right font-color-44c08c hidden" ng-click="gotoLogin('changeaccount')">切换账号</span>
+                </div>
+            </div>
+        </div>
+        <!--底部-->
+
+        <footer class="container-fluid goods-footer">
+            <!--有促销（优惠券 + 无优惠券）-->
+            <div class="row" ng-if="goodsSales" style="border-top: 1px solid #e5e5e5;">
+                <!--公用的咨询-->
+                <div class="col-xs-2 col-1-width">
+                    <div class="icons" ng-click="openQr()">
+                        <i class="icons-webchat font-color-ff7e00"></i>
+                        <span class="font-color-666 font-size-11">咨询</span>
+                    </div>
+                </div>
+                <!--优惠券-->
+                <div class="col-xs-2  col-2-width" ng-if="goodsModel.is_coupon==1" ng-click="openCoupon()">
+                    <div class="icons">
+                        <i class="icons-coupon font-color-ff7e00"></i>
+                        <span class="font-color-666">优惠券</span>
+                    </div>
+                </div>
+                    <!--有优惠券时价格的显示-->
+                    <div class="col-xs-8  col-3-width" ng-if="goodsModel.is_coupon==1">
+                        <div class="price font-color-fff" style="margin-top: 8px;">
+                            <p style="margin-bottom: 3px;">
+                                <span class="p1" ng-bind-html="goodsModel.real_price | currency:undefined:2"></span>
+                                <del ng-if="goodsSales"><span ng-bind-html="goodsModel.ori_real_price | currency:undefined:2"></span></del>
+                            </p>
+                            <p ng-if="goodsSales">
+                                <span class="s1 font-color-fff">{{goodsSales.name}}</span>
+                                <!--  <span ng-if="goodsSales.old_member==1" class="s1 font-color-fff">老学员</span> -->
+                                <span ng-if="goodsSales.end_time" class="timer" ng-bind-html="countdownTimer"></span>
+                            </p>
+                        </div>
+                        <button class="btn btn-primary buy-button-width">
+                            <div class="buy" ng-click="gotoBuy()">
+                                购买
+                            </div>
+                        </button>
+
+                    </div>
+                    <!--无优惠券时价格的显示-->
+                    <div class="col-xs-8  col-3">
+                        <div class="price font-color-fff" style="margin-top: 8px;">
+                            <p style="margin-bottom: 3px;">
+                                <span class="p1" ng-bind-html="goodsModel.real_price | currency:undefined:2"></span>
+                                <del ng-if="goodsSales"><span ng-bind-html="goodsModel.ori_real_price | currency:undefined:2"></span></del>
+                            </p>
+                            <p ng-if="goodsSales">
+                                <span class="s1 font-color-fff">{{goodsSales.name}}</span>
+                                <!-- <span ng-if="goodsSales.old_member==1">老学员</span> -->
+                                <span class="timer" ng-if="goodsSales.end_time" ng-bind-html="countdownTimer"></span>
+                            </p>
+                        </div>
+                        <button class="btn btn-primary buy-button" ng-click="gotoBuy()">
+                            <div class="buy">
+                                立即购买
+                            </div>
+                        </button>
+
+                    </div>
+
+            </div>
+            <!--无促销（优惠券 + 无优惠券）-->
+            <div class="row good-sale-non bg-color-fff" ng-if="!goodsSales" style="border-top: 1px solid #e5e5e5">
+                <div class="col-xs-12 padding-non clearfix">
+                    <!--无优惠券咨询显示-->
+                    <div class="insult col-xs-3 pull-left align-center padding-non" ng-if="goodsModel.is_coupon!=1" ng-click="openQr()"><i class="icons-webchat chat-non"></i>咨询</div>
+                    <!--无优惠券价格显示-->
+                    <div class="price  col-xs-5 pull-left align-center padding-non" ng-if="goodsModel.is_coupon!=1" ng-bind-html="goodsModel.real_price | currency:undefined:2"></div>
+                    <!--有优惠券咨询显示-->
+                    <div class="col-xs-2 col-1-width" ng-if="goodsModel.is_coupon==1">
+                        <div class="icons" ng-click="openQr()">
+                            <i class="icons-webchat font-color-ff7e00"></i>
+                            <span class="font-color-666 font-size-11 goods_insult" style="">咨询</span>
+                        </div>
+                    </div>
+                    <!--优惠券-->
+                    <div class="col-xs-2  col-2-width" ng-if="goodsModel.is_coupon==1" ng-click="openCoupon()">
+                        <div class="icons">
+                            <i class="icons-coupon font-color-ff7e00"></i>
+                            <span class="font-color-666 goods_cou" style="">优惠券</span>
+                        </div>
+                    </div>
+                    <!--有优惠券价格显示-->
+                    <div class="price  col-xs-4 pull-left align-center padding-non price  col-xs-4 pull-left align-center padding-non ng-binding ng-scope" ng-if="goodsModel.is_coupon==1" ng-bind-html="goodsModel.real_price | currency:undefined:2"></div>
+                    <!--购买按钮-->
+                    <div class="buy-btn col-xs-4 pull-right align-center padding-non" ng-click="gotoBuy()">立即购买</div>
+                </div>
+
+            </div>
+        </footer>
+        <!--课程已下架-->
+        <footer ng-if="goodsModel.status==2" class="container-fluid goods-footer">
+            <div class="row good-sale-non bg-color-fff" style="border-top: 1px solid #e5e5e5">
+                <div class="col-xs-12 padding-non clearfix">
+                    <div class="insult col-xs-4 pull-left align-center padding-non" ng-click="openQr()"><i class="icons-webchat chat-non"></i>咨询</div>
+                    <div class="col-xs-8 pull-right align-center padding-non font-color-fff font-size-15 bg-color-ccc">课程已下架，看看其他课程</div>
+                </div>
+            </div>
+        </footer>
+        <!--商品已售罄-->
+        <footer ng-if="goodsModel.count==0" class="container-fluid goods-footer">
+            <div class="row good-sale-non bg-color-fff" tyle="border-top: 1px solid #e5e5e5">
+                <div class="col-xs-12 padding-non clearfix">
+                    <div class="insult col-xs-4 pull-left align-center padding-non" ng-click="openQr()"><i class="icons-webchat chat-non"></i>咨询</div>
+                    <div class="col-xs-8 pull-right align-center padding-non font-color-fff font-size-15 bg-color-ccc">商品已售罄</div>
+                </div>
+            </div>
+        </footer>
+        <!--查看已购课程-->
+        <footer ng-if="goodsModel.is_pay==1" class="container-fluid goods-footer">
+            <div class="row good-sale-non bg-color-fff" style="border-top: 1px solid #e5e5e5">
+                <div class="col-xs-12 padding-non clearfix">
+                    <div class="insult col-xs-4 pull-left align-center padding-non" ng-click="openQr()"><i class="icons-webchat chat-non"></i>咨询</div>
+                    <div class="col-xs-8 pull-right align-center padding-non font-color-fff bg-color-44c08c font-size-15" ng-click="lookCourse()">查看已购课程</div>
+                </div>
+            </div>
+        </footer>
+
+        <!--遮罩-->
+        <div class="mask-layer" ng-style="maskOpened" ng-click="closeCoupon()"></div>
+        <!--咨询弹层-->
+        <div class="qr-box animated" ng-class="qrLayerClass">
+            <i class="close icons-c-error font-color-fff" ng-click="closeQr()"></i>
+            <p class="bold font-color-44c08c wx-head">微信咨询：</p>
+            <p class="bold font-color-fff mgb5" ng-if="isHead" style="font-weight: normal;">长按扫描下方二维码</p>
+            <p class="bold font-color-fff mgb5" ng-if="!isHead" style="font-weight: normal;">截图保存二维码，在微信中识别二维码</p>
+            <p class="font-color-fff mgb10 pdl15">
+                快添加班主任微信（
+                <span class="font-color-44c08c">{{goodsModel.wechat}}</span>
+                ）可咨询课程哦~
+            </p>
+            <div class="pdl15"><img class="code-u" ng-src="{{goodsModel.qrcode}}" style="width: 115px;height: 115px;" /></div>
+
+            <p class="bold font-color-44c08c phone-head mgt50 mgb5">电话咨询： </p>
+            <p class="font-color-fff phone-box" ng-click="tel(goodsModel.phone)"><i class="phone"></i><span>点击此处，拨打{{goodsModel.phone}}</span></p>
+        </div>
+        <toaster-container toaster-options="toasterOptions"></toaster-container>
+        <!--引导支付宝浮层-->
+        <div class="zfb-box hidden">
+            <i class="zfb-tip-arrow"></i>
+            <p class="zft-tip" style="margin-top: 150px">点击右上角菜单中的</p>
+            <p class="zft-tip font-color-44c08c">“在浏览器中打开”</p>
+            <p class="zft-tip">继续支付</p>
+            <p class="icons-c-error close"></p>
+        </div>
+        <!--领取优惠券弹层-->
+        <div class="container-fluid scroll_wrap_coupon animated" ng-class="couponLayerClass" style="left: 0;right: 0"> 
+            <div class="row padding15 scroll" infinite-scroll='couponListMoreDatas.nextPage()' infinite-scroll-disabled='couponListMoreDatas.busy' infinite-scroll-distance='0' infinite-scroll-container="'.scroll'" style="max-height: 435px!important;overflow: auto;">
+                <div class="col-xs-12">
+                    <div class="coupon-item animation-zoom" ng-repeat="item in couponListMoreDatas.items" ng-style="{'animation-delay':$index%6 * 50 + 'ms' }" ng-class="item.hasCoupon==0&&(item.count-item.receive_count==0)?'background-eee':'background-fff'">
+                    <div class="c-1" ng-style="item.old_member==1?{lineHeight:'normal'}:{lineHeight:'52px'}">
+                        <div class="con">
+                            <span class="coupon-money" ng-class="item.hasCoupon==0&&(item.count-item.receive_count==0)?'color-999':'font-color-44c08c'">￥</span>
+                            <span class="value" ng-class="item.hasCoupon==0&&(item.count-item.receive_count==0)?'color-999':'font-color-44c08c'">{{item.value.split('.')[0]}}<span style="font-size: 14px;">{{'.'+item.value.split('.')[1]}}</span></span>
+                            <span class="is-old" ng-class="item.hasCoupon==0&&(item.count-item.receive_count==0)?'color-999-bg':'font-color-fff'" ng-if="item.old_member==1">老学员专享</span>
+                        </div>
+                    </div>
+                    <div class="c-2" ng-class="item.hasCoupon==0&&(item.count-item.receive_count==0)?'color-999':'font-color-666'">
+                        <p class="title ellipsis" ng-bind-html="item.name"></p>
+                        <p class="info" ng-if="item.limit>0">订单金额满{{item.limit| currency:undefined:2}}可用</p>
+                        <p class="info" ng-if="item.limit==0">不限制使用金额</p>
+                        <p class="time"><span>{{formatDate(item.start_time,"YYYY.MM.DD")}}</span><span>至</span><span>{{formatDate(item.end_time," YYYY.MM.DD")}}</span></p>
+                    </div>
+                    <div class="c-3">
+                        <!--没领过，优惠券有剩余-->
+                        <div class="txt font-color-44c08c" ng-if="item.hasCoupon==0&&(item.count-item.receive_count>0)" ng-click="getCoupon(item)">领取</div>
+                        <!--没领过，优惠券无剩余-->
+                        <div class="txt color-999" ng-if="item.hasCoupon==0&&(item.count-item.receive_count==0)" style="color:#BBB">已领完</div>
+                        <!--已领过，优惠券数量有剩余-->
+                        <div class="txt font-color-44c08c" ng-if="item.hasCoupon==1" style="color:#b1b1b1"><i class="already"></i></div>
+                    </div>
+                    <div class="question" ng-if="item.remark&&item.hasCoupon==0" ng-click="openCouponInfo(item,$event)">
+                        <div class="ico"></div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-xs-12   loadinginfo color-999" ng-if="couponListMoreDatas.busy">
+                    努力加载中...
+                </div>
+                <div class="col-xs-12   loadinginfo color-999" ng-if="couponListMoreDatas.loadcomplete&&couponListMoreDatas.items.length>0">
+                    没有更多了
+                </div>
+                <div class="col-xs-12   loadinginfo color-999" ng-if="!couponListMoreDatas.first&&couponListMoreDatas.items.length<=0">
+                    暂无数据
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-xs-12 cancle-coupon" style="" ng-click="closeCoupon()">取 消</div>
+            </div>
+        </div>
+        <!--老学员说明-->
+        <script type="text/ng-template" id="/old-member-remark.html">
+            <h1>关于老学员</h1>
+            <div class="content">
+                <p>1.凡购买过馒头付费课程，系统自动判定为老学员；</p>
+                <p>2.老学员手机账号登录后，若再次购买馒头付费课程，可在原价基础上享受指定优惠；</p>
+                <p>3.老学员指定优惠和优惠券可同时使用。</p>
+            </div>
+            <input type="button" class="btn btn-primary" value="知道了" ng-click="$dismiss()" />
+        </script>
+        <!--优惠券使用说明-->
+        <script type="text/ng-template" id="/coupon-remark.html">
+            <h1>使用说明</h1>
+            <div class="content" ng-bind-html="remark"></div>
+            <input type="button" class="btn btn-primary" value="知道了" ng-click="$dismiss()" />
+        </script>
+        <!--课程下架-->
+        <script type="text/ng-template" id="/course-info.html">
+            <div class="modal-body">
+                <p class="modal-msg">{{msg}}</p>
+            </div>
+            <div class="modal-footer clearfix" style="height:60px">
+                <span class="close-common-btn" ng-click="close()" style="width:100%">关闭</span>
+            </div>
+        </script>
+    </div>
+    <div class="goodsTemplate" ng-if="assignments">
+        <div class="container-fluid scroll_wrap">
+            <div class="row">
+                <!--<header class="tip-bar" ng-if="!isApp">
+                <div class="tip-logo">
+                    <img src="/assets/static/images/top_logos.png">
+                    <p class="tip-title font-size-17 color-333">馒头</p>
+                    <p class="tip-info font-size-12 color-999">职场抱团成长社群</p>
+                </div>
+                <div class="tip-btn">
+                    <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.mtedu.android">
+                        <div class="download" style="color: #fff">
+                            打开APP
+                        </div>
+                    </a>
+                </div>
+            </header>-->
+                <div class="video-wrap">
+                    <img ng-src="{{assignments.cover}}" />
+                </div>
+
+
+                <div class="progress-row">
+                    <div class="progress-info">
+                        <span class="font-size-14" ng-if="assignments.startTime&&assignments.endTime">{{assignments.startTime*1000|date:"MM月dd日"}}-{{assignments.endTime*1000|date:"MM月dd日"}}</span>
+                        <span class="pull-right font-size-14 color-66d6a6">{{assignments.startStaus}}</span>
+                        <!--<span class="font-size-30 color-66d6a6">50</span>
+                    <span>%</span>-->
+                    </div>
+                </div>
+                <div class="rank-list">
+                    <div class="rank-list-info color-333 font-size-14">
+                        <p>
+                            <span>{{assignments.studyCounts}}</span>人已报名
+                        </p>
+                    </div>
+                    <div class="rank-list-person">
+                        <ul class="clearfix">
+                            <li ng-repeat="user in signUserInfo"><img ng-src="{{getImg(user.avatar)}}" /></li>
+                        </ul>
+                    </div>
+                    <div class="iconfont icon-iconsdanyou color-999 font-size-15"></div>
+                </div>
+                <div class="teacher-list" ng-repeat="teacher in assignments.teachersInfo">
+                    <div class="teacher-row clearfix">
+                        <div class="avatar1" style="background:url({{getImg(teacher.avatar)}});background-size:cover;">
+
+                        </div>
+                        <p style="margin-top:4px;">{{teacher.nickname}}</p>
+                        <p class="font-size-12" style="margin-top:6px;">{{teacher.company}}{{teacher.jobtitle}}</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 comment color-666" ng-style="opened?{height:'auto'}:{height:'80px'}"  ng-bind-html="assignments.comment">
+
+                </div>
+                <div class="col-xs-12 color-ccc slide" style="padding-bottom:15px;text-align:center;border-bottom:1px #e5e5e5 solid;">
+                    <a ng-click="open(true)" ng-if="!opened">展开<span class="up"></span></a>
+                    <a ng-click="open(false)" ng-if="opened">收起<span class="down"></span></a>
+                </div>
+                <div class="row">
+                    <div class="chapters col-xs-12">
+                        <dl ng-repeat="section in assignments.sections">
+                            <dt class="ellipsis" ng-show="section.name!=''">
+                                <span class="font-size-18">{{section.name}}</span>
+                                <span class="iconfont icon-productdownarror color-999"></span>
+                            </dt>
+                            <dd ng-repeat="chapter in section.chapters" ng-style="assignments.type==1?{borderBottom:'none'}:{borderBottom:'1px solid #e5e5e5'}">
+                                <div class="node-date" ng-if="assignments.type==1">
+                                    <p class="week font-size-14 color-66d6a6">{{chapter.publishTime*1000|date:'EEE'}}</p>
+                                    <p class="date font-size-12 color-fff">{{chapter.publishTime*1000|date:'M月dd日'}}</p>
+                                </div>
+                                <div class="node-num ng-scope" ng-if="assignments.type==2" >
+                                    <span class="color-999 font-size-17 ng-binding index-block">{{getNumer($index)}}</span>
+                                </div>
+                                <div class="node-info clearfix" ng-style="assignments.type==1?{borderBottom:'1px solid #e5e5e5'}:{borderBottom:'none'}">
+                                    <div class="node-title font-size-17 ellipsis">{{chapter.name}}</div>
+                                    <div class="node-attr color-999">
+                                        <ul class="clearfix">
+                                            <li>
+                                                <span  ng-if="chapter.type==1" class="icon-pl"></span>
+                                                <span  ng-if="chapter.type!=1" class="icon-wz" style="font-size:14px;" ></span>
+                                            </li>
+                                            <li ng-if="chapter.type==1">
+                                                <span>{{parseInt(chapter.video_time)==0?'制作中':calculateVideoTime(chapter.video_time)}}</span>
+                                            </li>
+                                            <li ng-if="chapter.type!=1">
+                                              <span ng-if="chapter.type==2">文章</span>
+                                              <span ng-if="chapter.type==3">练习</span>
+                                            </li>
+                                            <li ng-if="chapter.teachersInfo&&chapter.teachersInfo.length>0">
+                                                <span class="icon-user"></span>
+                                            </li>
+                                            <li class="chapter-teacher">
+                                                <span class="h" ng-repeat="teacher in chapter.teachersInfo">
+                                                    <span>{{teacher.nickname}}</span>
+                                                    <span>、</span>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <div class="node-tip color-999">
+                                    <!--已缓存-->
+                                    <span class="iconfont icon-down"></span>
+                                    <!--<span class="iconfont icon-lock"></span>-->
+                                </div>
+    
+                            </dd>
+
+                        </dl>
+
+                    </div>
+                </div>
+
+                <!--<div class="section" >
+                <div class="section-header">
+                    <span class="section-title font-size-18">更多精彩课程</span>
+                    <span class="section-info color-999 font-size-15 pull-right"></span>
+                </div>
+            </div>
+            <div class="more-course" ng-repeat="course in pay_course" ng-click="goto(course.url)">
+                <div class="cover">
+                    <img ng-src="{{getImg(course.picture)}}" />
+                </div>
+                <div class="info">
+                    <p class="title color-333 font-size-17 ellipsis">{{course.title}}</p>
+                    <p class="color-666 font-size-12">
+                        <span class="date">{{course.startTime|date:'MM/dd HH:mm'}}</span>
+                        <span class="pull-right color-666 cate">
+                            <i class="iconfont icon-biaoqian"></i>{{course.community.name}}
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="more-course" ng-repeat="course in assignment_course">
+                <div class="cover">
+                    <img ng-src="{{getImg(course.cover)}}" />
+                </div>
+                <div class="info">
+                    <p class="title color-333 font-size-17 ellipsis">{{course.name}}</p>
+                    <p class="color-666 font-size-12">
+                        <span class="date">{{course.startTime|date:'MM/dd HH:mm'}}</span>
+                        <span class="count">{{course.siginCounts}}</span>
+                        <span>人报名</span>
+                        <span class="pull-right color-666 cate">
+                            <i class="iconfont icon-biaoqian"></i>{{course.community.name}}
+                        </span>
+                    </p>
+                </div>
+            </div>-->
+            </div>
+        </div>
+        <div class="container-fluid t_footer" ng-if="goodsModel.is_pay!=1&&!isEnd" ng-click="gotoSign()">
+            <span class="color-fff font-size-20">立即报名</span>
+        </div>
+        <div class="container-fluid t_footer" ng-if="goodsModel.is_pay!=1&&isEnd" style="background-color: #ccc">
+            <span class="color-fff font-size-20">本期课程已结束报名</span>
+        </div>
+        <div class="container-fluid t_footer" ng-if="goodsModel.is_pay==1" ng-click="lookCourse()">
+            <span class="color-fff font-size-20">查看课程</span>
+        </div>
+    </div>
+</body>
+</html>

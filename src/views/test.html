@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap 实例 - 简单的轮播（Carousel）插件</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="slidershow" class="carousel slide" data-ride="carousel" data-interval="1000">
+    <!-- 设置图片轮播的顺序 -->
+    <ol class="carousel-indicators">
+        <li class="active" data-target="#slidershow" data-slide-to="0"></li>
+        <li data-target="#slidershow" data-slide-to="1"></li>
+        <li data-target="#slidershow" data-slide-to="2"></li>
+    </ol>
+    <!-- 设置轮播图片 -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <a href="##"><img style="height: 300px;width: 800px"></a>
+            <div class="carousel-caption">
+                <h3>图片标题1</h3>
+                <p>描述内容1...</p>
+            </div>
+        </div>
+        <div class="item">
+            <a href="##"><img style="height: 300px;width: 800px"></a>
+            <div class="carousel-caption">
+                <h3>图片标题2</h3>
+                <p>描述内容2...</p>
+            </div>
+        </div>
+        <div class="item">
+            <a href="##"><img style="height: 300px;width: 800px"></a>
+            <div class="carousel-caption">
+                <h3>图片标题3</h3>
+                <p>描述内容3...</p>
+            </div>
+        </div>
+    </div>
+    <!-- 设置轮播图片控制器 -->
+    <a class="left carousel-control" href="#slidershow" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#slidershow" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+
+</body>
+</html>

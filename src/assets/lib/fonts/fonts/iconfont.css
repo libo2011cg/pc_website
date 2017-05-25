@@ -1,0 +1,55 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1483770081375'); /* IE9*/
+  src: url('iconfont.eot?t=1483770081375#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1483770081375') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1483770081375') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1483770081375#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-c-webchat:before { content: "\e600"; }
+
+.icon-c-jia:before { content: "\e601"; }
+
+.icon-bottom:before { content: "\e610"; }
+
+.icon-alipay:before { content: "\e606"; }
+
+.icon-left:before { content: "\e61d"; }
+
+.icon-c-jian:before { content: "\e629"; }
+
+.icon-webchat:before { content: "\e63b"; }
+
+.icon-top:before { content: "\e61e"; }
+
+.icon-c-alipay:before { content: "\e63c"; }
+
+.icon-duihao:before { content: "\e608"; }
+
+.icon-c-error:before { content: "\e605"; }
+
+.icon-question:before { content: "\e62d"; }
+
+.icon-right:before { content: "\e61f"; }
+
+.icon-order:before { content: "\e60f"; }
+
+.icon-yuan:before { content: "\e619"; }
+
+.icon-error:before { content: "\e61a"; }
+
+.icon-coupon:before { content: "\e623"; }
+
+.icon-yuan-checked:before { content: "\e6a0"; }
+
+.icon-c-jiant:before { content: "\e6a1"; }
+

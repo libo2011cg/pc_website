@@ -1,0 +1,185 @@
+/* CSS Document */
+html, body, div, span, object, iframe,h1, h2,
+h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn,
+em, img, ins,kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd,
+ol, ul, li,fieldset, form, label, legend,table, caption, tbody,
+tfoot,thead,tr, th, td,article, aside, canvas, details, figcaption,
+figure, footer, header, hgroup, menu, nav, section, summary,time, mark,
+audio, video, input {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    vertical-align:baseline;
+    background:transparent;
+    outline-style:none;/*FF*/
+    box-sizing: border-box;
+}
+
+body {
+    line-height:1;
+    font-family: Tahoma,Arial,Helvetica,"微软雅黑";
+}
+a{
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+a:hover,a:focus{
+    text-decoration:none;
+    bblr:expression(this.onFocus=this.blur());/*IE*/
+    outline-style:none;/*FF*/
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+ul, ol, li {
+    list-style: none;
+}
+/*css为clearfix，清除浮动*/
+.clearfix::before,
+.clearfix::after{
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.ml15 {
+    margin-left: 15px;
+}
+/*遮罩*/
+.myshade {
+    position: absolute;left: 0;top: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,0.6);z-index: 200;display: none
+}
+/*版心*/
+.main {
+    width: 1200px;
+    margin: 0 auto;
+}
+/*头部-STARTS*/
+.header {
+    height: 60px;
+    background-color: #44C08C;
+}
+.header .top .top-logo {
+    float: left;
+    width: 300px;
+    height: 60px;
+
+}
+.header .top .top-logo a {
+    display: block;
+    width: 120px;
+    height: 30px;
+    margin: 15px 100px;
+    background: url("../images/h-logo.png") no-repeat;
+}
+.header .top .top-title {
+    float: left;
+    width: 600px;
+    height:60px;
+    line-height: 60px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+}
+.header .top .top-login {
+    float: left;
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+}
+.header .top .top-login .vertical-line {
+    margin: 0 5px;
+}
+.header .top .top-login a {
+    color: #fff;
+    display: inline;
+}
+.header .user-name {
+    display: inline-block;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    bottom: 4px;
+}
+.header .user-headimg {
+    position: relative;
+    display: inline-block;
+    top: 10px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.header .user-headimg img {
+    width: 40px;
+    height: 40px;
+}
+.header .nav {
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 200;
+}
+.header .nav ul {
+    width: 1000px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    font-size: 12px;
+}
+.header .nav ul li {
+    float: left;
+    width: 250px;
+    text-align: center;
+    border: 1px solid transparent;
+}
+.header .nav ul li a {
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin: 0 10px;
+    color: #FFF;
+}
+.header .nav ul li:hover {
+    border-bottom: 1px solid #44C08C;
+    border-left: 1px solid #7A797C;
+    border-right: 1px solid #7A797C;
+}
+.header .nav ul li a:hover {
+    color: #44C08C;
+}
+/*头部-END*/

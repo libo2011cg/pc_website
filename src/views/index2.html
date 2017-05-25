@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html no-auth="true" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>馒头商学院 - 首页</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="市场推广,活动策划,品牌公关,新媒体推广,网络营销">
+    <meta name="description" content="馒头商学院——网络营销学习频道为广大的网络营销人员提供：市场推广、活动策划、品牌公关、新媒体推广等互联网营销相关的学习培训课程，网络营销培训首选馒头商学院！">
+
+    <!--CSS引用-->
+    <link rel="stylesheet" href="/assets/lib/swiper/dist/css/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/lib/angular/angular-loading-bar/loading-bar.min.css" />
+    <link rel="stylesheet" href="/assets/lib/fonts/css/fonts.css" />
+    <link rel="stylesheet" href="/assets/lib/angular/toaster/toaster.min.css" />
+
+    <link rel="stylesheet" href="/assets/static/css/base.css">
+    <link rel="stylesheet" href="/assets/static/css/index.css">
+
+    <!--各页面的css引用紧挨着放style.css下面-->
+    <!--JS引用 公用-->
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/assets/lib/angular/angular.min.js"></script>
+    <script src="/assets/lib/angular/i18n/angular-locale_zh-cn.js"></script>
+    <script src="/assets/lib/angular/angular-animate.min.js"></script>
+    <script src="/assets/lib/angular/angular-sanitize.min.js"></script>
+    <script src="/assets/lib/angular/angular-cookies.min.js"></script>
+    <script src="/assets/lib/angular/ng-infinite-scroll.min.js"></script>
+    <script src="/assets/lib/angular/toaster/toaster.min.js"></script>
+    <script src="/assets/lib/angular/angular-loading-bar/loading-bar.min.js"></script>
+    <script src="/assets/lib/angular/ng-file-upload/ng-file-upload.min.js"></script>
+    <script src="/assets/lib/moment/moment.min.js"></script>
+    <script src="/assets/lib/moment/zh-cn.js"></script>
+    <script src="/assets/lib/angular/ui-bootstrap-tpls-2.1.3.min.js"></script>
+    <script src="/assets/lib/swiper/dist/js/swiper.min.js"></script>
+    <!--项目JS引用-->
+    <script src="/config/main.js"></script>
+    <script src="/assets/static/js/function.js"></script>
+    <script src="/assets/static/js/common.js?v=1"></script>
+    <script src="/assets/static/js/ctrl/indexCtrl.js"></script>
+</head>
+<body ng-app="App" ng-cloak ng-controller="indexCtrl">
+    <div class="main">
+        <!--顶部-START-->
+        <div class="header">
+            <div class="top clearfix">
+                <div class="top-logo">
+                    <a href="javascript:;" ng-click="toIndex()"></a>
+                </div>
+                <div class="top-title">#向所有人学习#</div>
+                <div class="top-login">
+                    <a href="javascript:;">注册</a>
+                    <span class="vertical-line">|</span>
+                    <a href="javascript:;">登录</a>
+                </div>
+            </div>
+            <div class="nav main">
+                <nav>
+                    <ul>
+                        <li><a href="javascript:;">首页</a></li>
+                        <li><a href="javascript:;">课程</a></li>
+                        <li><a href="javascript:;">企业内训</a></li>
+                        <li><a href="javascript:;">APP下载</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+        <!--顶部-END-->
+
+        <!--顶部视频窗口-START-->
+        <div class="video">
+            <img src="/assets/static/images/video-1.png" alt="">
+        </div>
+        <!--顶部视频窗口-END-->
+
+        <!--课程展示-START-->
+        <div class="course">
+            <div class="course-t">
+                <img src="/assets/static/images/course-t.png" alt="">
+            </div>
+            <div class="course-list">
+                <div class="course-desk"></div>
+                <div class="course-desk-2"></div>
+                <ul class="clearfix">
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span class="line-through">&nbsp;499&nbsp;</span></h4>
+                            <img src="/assets/static/images/today-free-icon.png" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span>499</span></h4>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span>499</span></h4>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span>499</span></h4>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span>499</span></h4>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span>499</span></h4>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span>499</span></h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--更多课程-->
+            <div class="course-more">
+                <input class="course-more-btn" type="button" value="更多课程" />
+            </div>
+        </div>
+        <!--课程展示-END-->
+
+        <!--互联网大咖-START-->
+        <div class="master">
+            <div class="master-t">
+                <img src="/assets/static/images/master-t.png" alt="">
+            </div>
+
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="http://www.baidu.com"><img style="height: 476px;width: 1200px;border: 0 none;"></a>
+                        <div class="master-left"><img src="/assets/static/images/master-person1.png" alt=""></div>
+                        <div class="master-right">
+                            <div class="master-video" style="width: 255px;height: 143px;margin-top: 120px;background-color:pink;"></div>
+                            <div class="master-person" style="margin-top: 30px;">
+                                <div class="person-company clearfix">
+                                    <div class="person-company-logo" style="float: left;"><img src="/assets/static/images/person-company-logo.png" alt=""></div>
+                                    <div class="person-company-info" style="float: left;margin-left: 15px;">
+                                        <h2 style="height: 40px;font-size: 30px;">黎万强12</h2>
+                                        <p style="font-size: 12px;color: #3c3c3c;">小米联合创始人《参与感》作者</p>
+                                    </div>
+                                </div>
+                                <p class="person-info" style="width: 402px;font-size: 12px;line-height: 20px;margin-top: 20px;color: #3c3c3c;">
+                                    黎万强，小米科技联合创始人，商业畅销书《参与感》作者。曾任小米MIUI负责人，创立了基于“用户开发模式”MIUI手机操作系统研发方法。后任小米网负责人，负责小米的市场营销、电商和服务。2014年12月，宣布闭关，休假并思考小米公司新战略项目。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="http://www.baidu.com"><img style="height: 476px;width: 1200px;border: 0 none;"></a>
+                        <div class="master-left"><img src="/assets/static/images/master-person1.png" alt=""></div>
+                        <div class="master-right">
+                            <div class="master-video" style="width: 255px;height: 143px;margin-top: 120px;background-color:pink;"></div>
+                            <div class="master-person" style="margin-top: 30px;">
+                                <div class="person-company clearfix">
+                                    <div class="person-company-logo" style="float: left;"><img src="/assets/static/images/person-company-logo.png" alt=""></div>
+                                    <div class="person-company-info" style="float: left;margin-left: 15px;">
+                                        <h2 style="height: 40px;font-size: 30px;">黎万强12</h2>
+                                        <p style="font-size: 12px;color: #3c3c3c;">小米联合创始人《参与感》作者</p>
+                                    </div>
+                                </div>
+                                <p class="person-info" style="width: 402px;font-size: 12px;line-height: 20px;margin-top: 20px;color: #3c3c3c;">
+                                    黎万强，小米科技联合创始人，商业畅销书《参与感》作者。曾任小米MIUI负责人，创立了基于“用户开发模式”MIUI手机操作系统研发方法。后任小米网负责人，负责小米的市场营销、电商和服务。2014年12月，宣布闭关，休假并思考小米公司新战略项目。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="http://www.baidu.com"><img style="height: 476px;width: 1200px;border: 0 none;"></a>
+                        <div class="master-left"><img src="/assets/static/images/master-person1.png" alt=""></div>
+                        <div class="master-right">
+                            <div class="master-video" style="width: 255px;height: 143px;margin-top: 120px;background-color:pink;"></div>
+                            <div class="master-person" style="margin-top: 30px;">
+                                <div class="person-company clearfix">
+                                    <div class="person-company-logo" style="float: left;"><img src="/assets/static/images/person-company-logo.png" alt=""></div>
+                                    <div class="person-company-info" style="float: left;margin-left: 15px;">
+                                        <h2 style="height: 40px;font-size: 30px;">黎万强12</h2>
+                                        <p style="font-size: 12px;color: #3c3c3c;">小米联合创始人《参与感》作者</p>
+                                    </div>
+                                </div>
+                                <p class="person-info" style="width: 402px;font-size: 12px;line-height: 20px;margin-top: 20px;color: #3c3c3c;">
+                                    黎万强，小米科技联合创始人，商业畅销书《参与感》作者。曾任小米MIUI负责人，创立了基于“用户开发模式”MIUI手机操作系统研发方法。后任小米网负责人，负责小米的市场营销、电商和服务。2014年12月，宣布闭关，休假并思考小米公司新战略项目。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination myswiper-pagination"></div>
+
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev "></div>
+                <div class="swiper-button-next  "></div>
+
+                <!-- 如果需要滚动条 -->
+                <!--<div class="swiper-scrollbar"></div>-->
+            </div>
+
+
+
+            <!--<div id="slidershow" class="carousel slide" data-ride="carousel" data-interval="3000" style="border:0 none;">-->
+                <!--&lt;!&ndash; 设置图片轮播的顺序 &ndash;&gt;-->
+                <!--<ol class="carousel-indicators" style="border:0 none;">-->
+                    <!--<li class="active" data-target="#slidershow" data-slide-to="0"></li>-->
+                    <!--<li data-target="#slidershow" data-slide-to="1"></li>-->
+                    <!--<li data-target="#slidershow" data-slide-to="2"></li>-->
+                <!--</ol>-->
+                <!--&lt;!&ndash; 设置轮播图片 &ndash;&gt;-->
+                <!--<div class="carousel-inner">-->
+                    <!--<div class="item active">-->
+                        <!--<a href="http://www.baidu.com"><img style="height: 476px;width: 1200px;border: 0 none;"></a>-->
+                        <!--<div class="master-left"><img src="/assets/static/images/master-person1.png" alt=""></div>-->
+                        <!--<div class="master-right">-->
+                            <!--<div class="master-video" style="width: 255px;height: 143px;margin-top: 120px;background-color:pink;"></div>-->
+                            <!--<div class="master-person" style="margin-top: 30px;">-->
+                                <!--<div class="person-company clearfix">-->
+                                    <!--<div class="person-company-logo" style="float: left;"><img src="/assets/static/images/person-company-logo.png" alt=""></div>-->
+                                    <!--<div class="person-company-info" style="float: left;margin-left: 15px;">-->
+                                        <!--<h2 style="height: 40px;font-size: 30px;">黎万强</h2>-->
+                                        <!--<p style="font-size: 12px;color: #3c3c3c;">小米联合创始人《参与感》作者</p>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<p class="person-info" style="width: 402px;font-size: 12px;line-height: 20px;margin-top: 20px;color: #3c3c3c;">-->
+                                    <!--黎万强，小米科技联合创始人，商业畅销书《参与感》作者。曾任小米MIUI负责人，创立了基于“用户开发模式”MIUI手机操作系统研发方法。后任小米网负责人，负责小米的市场营销、电商和服务。2014年12月，宣布闭关，休假并思考小米公司新战略项目。-->
+                                <!--</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="item">-->
+                        <!--<a href="http://www.baidu.com"><img style="height: 476px;width: 1200px;border: 0 none;"></a>-->
+                        <!--<div class="master-left"><img src="/assets/static/images/master-person1.png" alt=""></div>-->
+                        <!--<div class="master-right">-->
+                            <!--<div class="master-video" style="width: 255px;height: 143px;margin-top: 120px;background-color:pink;"></div>-->
+                            <!--<div class="master-person" style="margin-top: 30px;">-->
+                                <!--<div class="person-company clearfix">-->
+                                    <!--<div class="person-company-logo" style="float: left;"><img src="/assets/static/images/person-company-logo.png" alt=""></div>-->
+                                    <!--<div class="person-company-info" style="float: left;margin-left: 15px;">-->
+                                        <!--<h2 style="height: 40px;font-size: 30px;">黎万强12</h2>-->
+                                        <!--<p style="font-size: 12px;color: #3c3c3c;">小米联合创始人《参与感》作者</p>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<p class="person-info" style="width: 402px;font-size: 12px;line-height: 20px;margin-top: 20px;color: #3c3c3c;">-->
+                                    <!--黎万强，小米科技联合创始人，商业畅销书《参与感》作者。曾任小米MIUI负责人，创立了基于“用户开发模式”MIUI手机操作系统研发方法。后任小米网负责人，负责小米的市场营销、电商和服务。2014年12月，宣布闭关，休假并思考小米公司新战略项目。-->
+                                <!--</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash; 设置轮播图片控制器 &ndash;&gt;-->
+                <!--<a class="left carousel-control" href="#slidershow" role="button" data-slide="prev" style="width: 18%;">-->
+                    <!--<span class="glyphicon glyphicon-chevron-left"></span>-->
+                <!--</a>-->
+                <!--<a class="right carousel-control" href="#slidershow" role="button" data-slide="next" style="width: 18%;">-->
+                    <!--<span class="glyphicon glyphicon-chevron-right"></span>-->
+                <!--</a>-->
+            <!--</div>-->
+        </div>
+        <!--互联网大咖-END-->
+
+        <!--打通线上线下-START-->
+        <div class="on-off-line">
+            <div class="on-off-line-t">
+                <img src="/assets/static/images/on-off-line-t.png" alt="">
+            </div>
+            <div class="story">
+                <div class="story-center">
+                    <!--垂直的线-->
+                    <div class="story-vertical-line">
+                        <!--所有的年份-->
+                        <div class="story-vertical-year year2017">2017</div>
+                        <div class="story-vertical-year year2016">2016</div>
+                        <div class="story-vertical-year year2015">2015</div>
+
+                        <!--所有的小圆圈-->
+                        <div class="story-vertical-circle circle1"></div>
+                        <div class="story-vertical-circle circle2"></div>
+                        <div class="story-vertical-circle circle3"></div>
+                        <div class="story-vertical-circle circle4"></div>
+                        <div class="story-vertical-circle circle5"></div>
+                        <div class="story-vertical-circle circle6"></div>
+
+                        <!--所有的水平线-->
+                        <div class="story-level-line line1"></div>
+                        <div class="story-level-line line2"></div>
+                        <div class="story-level-line line3"></div>
+                        <div class="story-level-line line4"></div>
+                        <div class="story-level-line line5"></div>
+                        <div class="story-level-line line6"></div>
+
+                        <!--所有的文字-->
+                        <div class="story-text text1"><span>2017/2/14</span><h3>北京</h3></div>
+                        <div class="story-text text2"><span>2017/2/14</span><h3>上海</h3></div>
+                        <div class="story-text text3"><span>2017/2/14</span><h3>北京</h3></div>
+                        <div class="story-text text4"><span>2017/2/14</span><h3>上海</h3></div>
+                        <div class="story-text text5"><span>2017/2/14</span><h3>北京</h3></div>
+                        <div class="story-text text6"><span>2017/2/14</span><h3>上海</h3></div>
+
+                        <!--所有的图片-->
+                        <div class="story-image image1">
+                            <img src="/assets/static/images/story-1.png" alt="">
+                            <p>馒头商学院产品家 <br/> 毕业结营现场</p>
+                        </div>
+                        <div class="story-image image2">
+                            <img src="/assets/static/images/story-2.png" alt="">
+                            <p>馒头商学院2016年开学大课 <br/> 在国家会议中心举行</p>
+                        </div>
+                        <div class="story-image image3">
+                            <img src="/assets/static/images/story-2.png" alt="">
+                            <p>馒头商学院2016年开学大课 <br/> 在国家会议中心举行</p>
+                        </div>
+                        <div class="story-image image4">
+                            <img src="/assets/static/images/story-1.png" alt="">
+                            <p>馒头商学院产品家 <br/> 毕业结营现场</p>
+                        </div>
+                        <div class="story-image image5">
+                            <img src="/assets/static/images/story-1.png" alt="">
+                            <p>馒头商学院产品家 <br/> 毕业结营现场</p>
+                        </div>
+                        <div class="story-image image6">
+                            <img src="/assets/static/images/story-1.png" alt="">
+                            <p>馒头商学院产品家 <br/> 毕业结营现场</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--打通线上线下-END-->
+
+        <!--底部footer-START-->
+        <div class="footer">
+            <div class="footer-top clearfix">
+                <div class="fl contact">
+                    <div>
+                        <a class="footer-logo">
+                            <img src="/assets/static/images/footer-logo.png" alt="">
+                            <img src="/assets/static/images/footer-logo-text.png" style="position: relative;top: -3px;" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <p>客服邮箱</p>
+                        <p>support@mtedu.com</p>
+                    </div>
+                    <div>
+                        <p>客服微信</p>
+                        <p>younimt10</p>
+                    </div>
+                    <div>
+                        <p>反馈建议</p>
+                        <p>010-57799917</p>
+                    </div>
+                    <div class="address">
+                        <p class="">公司地址</p>
+                        <p>北京市海淀区知春路6号（锦秋国际大厦）</p>
+                        <p>6幢6层B03、B04室</p>
+                    </div>
+                </div>
+                <div class="fl consociation">
+                    <h3>合作伙伴</h3>
+                    <a href="javascript:;"><img src="/assets/static/images/footer-1.png" alt=""></a>
+                    <a href="javascript:;"><img src="/assets/static/images/footer-2.png" alt=""></a>
+                    <a href="javascript:;"><img src="/assets/static/images/footer-3.png" alt=""></a>
+                    <a href="javascript:;"><img src="/assets/static/images/footer-4.png" alt=""></a>
+                    <a href="javascript:;"><img src="/assets/static/images/footer-5.png" alt=""></a>
+                    <a href="javascript:;"><img src="/assets/static/images/footer-6.png" alt=""></a>
+                    <a href="javascript:;"><img src="/assets/static/images/footer-7.png" alt=""></a>
+                </div>
+                <div class="fl report">
+                    <h3>媒体报道</h3>
+                    <a href="javascript:;"><img src="/assets/static/images/footer-8.png" alt=""></a>
+                    <a href="javascript:;"><img src="/assets/static/images/footer-9.png" alt=""></a>
+                    <a href="javascript:;"><img src="/assets/static/images/footer-10.png" alt=""></a>
+                    <a href="javascript:;"><img src="/assets/static/images/footer-11.png" alt=""></a>
+                    <a href="javascript:;"><img src="/assets/static/images/footer-12.png" alt=""></a>
+                </div>
+                <div class="fl wechat">
+                    <h3>微信公众号</h3>
+                    <img src="/assets/static/images/qr-code.png" alt="">
+                </div>
+            </div>
+            <div class="copyright">北京麦拓教育科技有限公司 @版权所有&nbsp;&nbsp;&nbsp;&nbsp;京ICP备14024516号-3</div>
+        </div>
+    </div>
+
+    <script>
+        $(function(){
+            var mySwiper = new Swiper ('.swiper-container', {
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                pagination: '.swiper-pagination',
+                spaceBetween: 0,
+                centeredSlides: true,
+                autoplay: 3000,
+                autoplayDisableOnInteraction: false,
+                loop:true
+            });
+            $(".swiper-container").animate({
+                "display" : "block"
+            },1000);
+        })
+    </script>
+</body>
+</html>
