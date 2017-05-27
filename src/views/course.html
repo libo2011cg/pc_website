@@ -14,9 +14,11 @@
     <link rel="stylesheet" href="/assets/static/css/base.css">
     <link rel="stylesheet" href="/assets/static/css/course.css">
     <link rel="stylesheet" href="/assets/lib/font-awesome-4.7.0/css/font-awesome.min.css"/>
-    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="/assets/lib/swiper/dist/js/swiper.min.js"></script>
+
     <script src="/config/main.js"></script>
+    <script src="/assets/lib/jquery/jquery.js"></script>
+    <script src="/assets/lib/swiper/dist/js/swiper.min.js"></script>
+    <script src="/assets/lib/jquery/jquery.page.js"></script>
     <script src="/assets/static/js/ctrl/course.js"></script>
 </head>
 <body>
@@ -94,6 +96,157 @@
             </div>
         </div>
         <!--顶部轮播图-END-->
+
+        <!--课程列表-START-->
+        <div class="course">
+            <!--课程分类-->
+            <div class="course-category">
+                <div class="all">
+                    <h4 class="active">全部内容</h4>
+                    <input type="checkbox" id="pay" checked> <label for="pay">付费</label>
+                    <input type="checkbox" id="free"> <label for="free" style="margin-left: 20px;">免费</label>
+                </div>
+                <div class="internet">
+                    <h4>互联网</h4>
+                    <ul>
+                        <li><a href="javascript:;">产品</a></li>
+                        <li><a href="javascript:;">研发</a><span>|</span></li>
+                        <li><a href="javascript:;">运营</a><span>|</span></li>
+                        <li><a href="javascript:;">营销</a><span>|</span></li>
+                        <li><a href="javascript:;">交互</a></li>
+                    </ul>
+                </div>
+                <div class="work">
+                    <h4>职场</h4>
+                    <ul>
+                        <li><a href="javascript:;">产品</a></li>
+                        <li><a href="javascript:;">研发</a><span>|</span></li>
+                        <li><a href="javascript:;">运营</a><span>|</span></li>
+                        <li><a href="javascript:;">营销</a><span>|</span></li>
+                        <li><a href="javascript:;">交互</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course-list">
+                <div>
+                    <div class="course-desk"></div>
+                    <div class="course-desk"></div>
+                    <div class="course-desk"></div>
+                </div>
+
+                <ul class="clearfix">
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span class="line-through">&nbsp;499&nbsp;</span></h4>
+                            <img src="/assets/static/images/today-free-icon.png" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span>499</span></h4>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span>499</span></h4>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span>499</span></h4>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span>499</span></h4>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span>499</span></h4>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span>499</span></h4>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span>499</span></h4>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span>499</span></h4>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span>499</span></h4>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="/assets/static/images/course-1.png" alt="课程名称1">
+                        </a>
+                        <div class="course-info">
+                            <p><span>1999</span>人已报名</p>
+                            <h4>RMB <span>499</span></h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <table id="data">
+                </table>
+            </div>
+            <div id="pageBox" style="height: 70px;margin-top: 20px;">
+                <div id="page" style="width: 360px;height: 70px;margin: 0 auto;"></div>
+            </div>
+
+        </div>
+        <!--课程列表-END-->
     </div>
 
     <!--遮罩-->

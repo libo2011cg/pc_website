@@ -183,3 +183,74 @@ ul, ol, li {
     color: #44C08C;
 }
 /*头部-END*/
+/*课程列表-START -- 用于首页和课程页*/
+.course .course-list {
+    margin-top: 5px;
+}
+.course .course-list {
+    position: relative;
+    overflow: hidden;
+}
+.course .course-list .course-desk {
+    position: relative;
+    margin-top: 244px;
+    left: 50%;
+    margin-left: -517px;
+    z-index: 100;
+    width: 1034px;
+    height: 138px;
+    background: url("/assets/static/images/course-desk-bg.png") no-repeat;
+}
+.course .course-list ul {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin-left: -440px;
+    width: 880px;
+    z-index: 200;
+}
+.course .course-list ul li {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0 25px;
+    bottom: -21px;
+}
+.course .course-list ul li a {
+    display: inline-block;
+}
+.course .course-list ul li .course-info {
+    margin-top: 50px;
+    height: 65px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.course .course-list ul li .course-info p {
+    font-size: 12px;
+    color: #3C3C3C;
+}
+.course .course-list ul li .course-info h4 {
+    font-size: 18px;
+    height: 30px;
+    line-height: 30px;
+}
+/*课程列表-END*/
+
+
+/*复选框样式*/
+input[type='checkbox'] {
+    display: none;
+}
+input[type='checkbox'] + label:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+    margin-top: -2px;
+    background-image: url("/assets/static/images/checkbox.png");
+}
+input[type='checkbox']:checked + label:before {
+    background-image: url("/assets/static/images/checkbox-checked.png");
+}

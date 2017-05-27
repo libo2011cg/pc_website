@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*头部用户信息-START*/
+/*顶部轮播图-START*/
 .course-slide .swiper-button-prev,
 .course-slide .swiper-button-next {
     background: snow;
@@ -31,15 +31,58 @@
 .course-slide .course-category a.active {
     color: #44C08C;
 }
-/*头部用户信息-END*/
+/*顶部轮播图-END*/
 
+/*课程分类-START*/
+.course {
+    background: url("/assets/static/images/course-bg-wall.png") repeat;
+}
+.course .course-category {
+    position: relative;
+    z-index: 200;
+    background-color: #fff;
+    height: 80px;
+    font-size: 12px;
+    /*border-bottom: 1px solid blue;*/
+    padding: 0 100px;
+    box-shadow: 5px 5px 5px #ccc;
+}
+.course .course-category > div {
+    float: left;
+    padding-top: 20px;
+}
+.course .course-category > div.all {
+    width: 225px;
+}
+.course .course-category > div.internet {
+    width: 330px;
+}
+.course .course-category > div h4 {
+    font-size: 16px;
+    color: #3C3C3C;
+    margin-bottom: 12px;
+    font-family: "黑体",Tahoma,Arial,Helvetica, "Microsoft Yahei", "微软雅黑";
+}
+.course .course-category > div h4.active {
+    color: #44C08C;
+}
+.course .course-category > div ul li {
+    float: left;
+}
+.course .course-category > div ul li a {
+    color: #3C3C3C;
+}
+.course .course-category > div ul li span {
+    margin: 0 7px;
+}
+.course .course-list {
+    margin-top: 30px;
+}
+/*课程分类-END*/
 
-
-/*头部用户信息-START*/
-
-/*头部用户信息-END*/
-
-
+#page div a {
+    color: #656565;
+}
 
 /*头部用户信息-START*/
 
