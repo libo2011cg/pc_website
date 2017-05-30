@@ -182,6 +182,14 @@ ul, ol, li {
 .header .nav ul li a:hover {
     color: #44C08C;
 }
+.header .nav ul li.active {
+    border-bottom: 1px solid #44C08C;
+    border-left: 1px solid #7A797C;
+    border-right: 1px solid #7A797C;
+}
+.header .nav ul li.active a {
+    color: #44C08C;
+}
 /*头部-END*/
 /*课程列表-START -- 用于首页和课程页*/
 .course .course-list {
