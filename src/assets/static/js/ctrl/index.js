@@ -3,7 +3,7 @@ $(function () {
     masterSlide();  //互联网大咖轮播图
     playMasterVideo();
     videoWindow();  //视频播放弹窗的打开与关闭
-    appDownload();  //点击APP下载，弹窗
+
 });
 
 
@@ -64,20 +64,6 @@ function videoWindow() {
     });
 }
 
-/*点击APP下载，弹窗*/
-function appDownload() {
-    $('#app_download').click(function () {
-        $('#myshade').height($(document).height()+'px');
-        $('#myshade').show();
-        $('#download_window').show();
-        /*关闭弹窗*/
-        $('#download_window').click(function () {
-            $('#myshade').hide();
-            $('#download_window').hide();
-        });
-    });
-}
-        
 /*播放互联网大咖视频*/
 function playMasterVideo() {
     /*获取到视频对象*/

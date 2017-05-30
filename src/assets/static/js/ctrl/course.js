@@ -9,6 +9,8 @@ $(function () {
 /*顶部课程轮播图*/
 function courseSlide() {
     var mySwiper = new Swiper ('.swiper-container', {
+        freeMode:true,
+        width: 1100,
         nextButton: '.swiper-button-next',      //下一张按钮
         prevButton: '.swiper-button-prev',      //上一张按钮
         pagination: '.swiper-pagination',       //分页器
