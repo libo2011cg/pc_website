@@ -1,0 +1,97 @@
+@charset "UTF-8";
+.user-center {
+    position: relative;
+    padding: 70px 40px 40px 40px;
+    background-color: #F6F6F6;
+}
+.my-course {
+    width: 850px;
+    background-color: #fff;
+    padding: 20px;
+}
+.my-course .course-tab {
+}
+.my-course .course-tab li {
+    float: left;
+    margin-right: 50px;
+    height: 30px;
+    line-height: 30px;
+}
+.my-course .course-tab li:hover {
+    border-bottom: 3px solid #ddd;
+}
+.my-course .course-tab li.active {
+    border-bottom: 3px solid #44C08C;
+}
+.my-course .course-tab li a {
+    display: block;
+    color: #444;
+}
+.my-course .course-list {
+
+}
+.course-list .course-item {
+    padding: 20px 0;border-top: 1px solid #ddd;
+}
+.course-list .course-item img {
+    width: 170px;heigt: 235px;
+}
+.course-list .course-item .course-info {
+    margin-left: 20px;position: relative;height: 235px;
+}
+.course-item .course-info h3 {
+    margin-top: 10px;width: 610px;line-height: 25px;
+}
+.course-item .course-info .study-percent {
+    margin-top: 10px;height: 30px;line-height: 30px;font-size: 14px;color: #666;
+}
+.course-info .study-percent .study {
+    position: relative;;display: inline-block;width: 300px;height: 10px;background-color: #F0F0F0;border-radius: 5px;
+}
+.course-info .study-percent .study p {
+    position: absolute;;height: 10px;border-radius: 5px;
+}
+.course-info .study-percent p {
+    display: inline-block;
+}
+.course-info .all-stu-person {
+    position: absolute; left: 0; bottom: 10px;width: 100%;height: 26px;line-height: 26px;font-size: 14px
+}
+.course-info .all-stu-person a {position: absolute;width: 70px;height: 26px;right: 0;text-align: center;border-radius: 4px;color: #fff;cursor: pointer; }
+.user-center .my-info {
+    width: 240px;
+    background-color: #fff;
+    padding: 20px 15px;
+}
+.my-info .user-img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 2px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+.my-info .user-img a {
+    display: block;
+    width: 94px;
+    height: 94px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.my-info .user-img a img {
+    width: 94px;
+}
+.my-info h4 {
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+.my-info p {
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+}
+.my-info p label {
+    color: #44C08C;
+}

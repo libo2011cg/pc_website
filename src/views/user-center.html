@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html no-auth="true" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>馒头商学院 - 个人中心</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="市场推广,活动策划,品牌公关,新媒体推广,网络营销">
+    <meta name="description" content="馒头商学院——网络营销学习频道为广大的网络营销人员提供：市场推广、活动策划、品牌公关、新媒体推广等互联网营销相关的学习培训课程，网络营销培训首选馒头商学院！">
+
+    <!--CSS引用-->
+    <link rel="stylesheet" href="/assets/lib/swiper/dist/css/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/lib/fonts/css/fonts.css" />
+    <link rel="stylesheet" href="/assets/static/css/base.css">
+    <link rel="stylesheet" href="/assets/static/css/userCenter.css">
+    <link rel="stylesheet" href="/assets/lib/font-awesome-4.7.0/css/font-awesome.min.css"/>
+
+    <script src="/assets/static/js/config.js"></script>
+    <script src="/assets/static/js/utils.js"></script>
+    <script src="/assets/lib/jquery/jquery.js"></script>
+    <script src="/assets/lib/jquery/jquery.cookie.js"></script>
+    <script src="/assets/lib/swiper/dist/js/swiper.min.js"></script>
+    <script src="/assets/lib/jquery/jquery.page.js"></script>
+    <script src=/assets/static/js/ctrl/base.js></script>
+    <script src="/assets/static/js/ctrl/userCenter.js"></script>
+</head>
+<body>
+    <!--顶部-START-->
+    <div class="main">
+        <div class="header bgc-green">
+            <!--顶部信息-->
+            <div id="user_box" class="top clearfix" style="height: 60px;display: block"></div>
+            <div class="nav main">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="course.html">课程</a></li>
+                        <li><a href="javascript:;">企业内训</a></li>
+                        <li><a href="javascript:;" id="app_download">APP下载</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!--下载app窗口-->
+        <div id="download_window"></div>
+        <!--注册窗口-->
+        <div id="regist_window" class="r-l-window"></div>
+        <!--登录窗口-->
+        <div id="login_window" class="r-l-window"></div>
+    </div>
+    <!--顶部-END-->
+
+    <!--主体内容-->
+    <div class="main">
+        <div class="user-center clearfix">
+            <div class="fl my-course">
+                <ul class="course-tab clearfix">
+                    <li data-id="free_course" class="active"><a href="javascript:;">免费课程</a></li>
+                    <li data-id="buy_course"><a href="javascript:;">已购课程</a></li>
+                </ul>
+                <div id="course_dv">
+                    <div id="free_course" class="course-list">
+                        <div class="course-item clearfix">
+                            <div class="course-img fl">
+                                <img src="/assets/static/images/course-1.png" alt="">
+                            </div>
+                            <div class="course-info fl">
+                                <h3>免费课程标题abcd</h3>
+                                <div class="study-percent">
+                                    <span>学习进度：</span>
+                                    <div class="study">
+                                        <p class="bgc-green" style="width: 90%;"></p>
+                                    </div>
+                                    <span class="ml15">学完<span>90%</span></span>
+                                </div>
+                                <div class="all-stu-person">
+                                    <span>已有 <span class="c-green">2334</span>人，跟你一起学习</span>
+                                    <a class="bgc-green">继续学习</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-item clearfix">
+                            <div class="course-img fl">
+                                <img src="/assets/static/images/course-1.png" alt="">
+                            </div>
+                            <div class="course-info fl">
+                                <h3>免费课程标题abcd</h3>
+                                <div class="study-percent">
+                                    <span>学习进度：</span>
+                                    <div class="study">
+                                        <p class="bgc-green" style="width: 90%;"></p>
+                                    </div>
+                                    <span class="ml15">学完<span>90%</span></span>
+                                </div>
+                                <div class="all-stu-person">
+                                    <span>已有 <span class="c-green">2334</span>人，跟你一起学习</span>
+                                    <a class="bgc-green">继续学习</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-item clearfix">
+                            <div class="course-img fl">
+                                <img src="/assets/static/images/course-1.png" alt="">
+                            </div>
+                            <div class="course-info fl">
+                                <h3>免费课程标题abcd</h3>
+                                <div class="study-percent">
+                                    <span>学习进度：</span>
+                                    <div class="study">
+                                        <p class="bgc-green" style="width: 90%;"></p>
+                                    </div>
+                                    <span class="ml15">学完<span>90%</span></span>
+                                </div>
+                                <div class="all-stu-person">
+                                    <span>已有 <span class="c-green">2334</span>人，跟你一起学习</span>
+                                    <a class="bgc-green">继续学习</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="buy_course" class="course-list" style="display: none;">
+                        <div class="course-item clearfix">
+                            <div class="course-img fl">
+                                <img src="/assets/static/images/course-1.png" alt="">
+                            </div>
+                            <div class="course-info fl">
+                                <h3>已购课程标题abcd</h3>
+                                <div class="study-percent">
+                                    <span>学习进度：</span>
+                                    <div class="study">
+                                        <p class="bgc-green" style="width: 60%;"></p>
+                                    </div>
+                                    <span class="ml15">学完<span>60%</span></span>
+                                </div>
+                                <div class="all-stu-person">
+                                    <span>已有 <span class="c-green">2334</span>人，跟你一起学习</span>
+                                    <a class="bgc-green">继续学习</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-item clearfix">
+                            <div class="course-img fl">
+                                <img src="/assets/static/images/course-1.png" alt="">
+                            </div>
+                            <div class="course-info fl">
+                                <h3>已购课程标题abcd</h3>
+                                <div class="study-percent">
+                                    <span>学习进度：</span>
+                                    <div class="study">
+                                        <p class="bgc-green" style="width: 60%;"></p>
+                                    </div>
+                                    <span class="ml15">学完<span>60%</span></span>
+                                </div>
+                                <div class="all-stu-person">
+                                    <span>已有 <span class="c-green">2334</span>人，跟你一起学习</span>
+                                    <a class="bgc-green">继续学习</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-item clearfix">
+                            <div class="course-img fl">
+                                <img src="/assets/static/images/course-1.png" alt="">
+                            </div>
+                            <div class="course-info fl">
+                                <h3>已购课程标题abcd</h3>
+                                <div class="study-percent">
+                                    <span>学习进度：</span>
+                                    <div class="study">
+                                        <p class="bgc-green" style="width: 60%;"></p>
+                                    </div>
+                                    <span class="ml15">学完<span>60%</span></span>
+                                </div>
+                                <div class="all-stu-person">
+                                    <span>已有 <span class="c-green">2334</span>人，跟你一起学习</span>
+                                    <a class="bgc-green">继续学习</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fr my-info">
+                <div class="user-img">
+                    <a href="javascript:;">
+                        <img src="/assets/static/images/course-1.png" alt="">
+                    </a>
+                </div>
+                <h4>懒馒头123</h4>
+                <p><label>登录账号:</label> <span>18612345678</span></p>
+                <p style="height: auto;"><label>江湖阅历:</label> <span>XXX有限公司，3年工作经验</span></p>
+                <p><label>学习:</label> <span>2分钟27秒</span></p>
+                <p><label>已学:</label> <span>5门课程</span></p>
+                <p><label>提问:</label> <span>7条</span></p>
+                <p><label>回答:</label> <span>8条</span></p>
+                <p><label>阅读:</label> <span>7</span></p>
+                <p><label>赞过的文章:</label> <span>8</span></p>
+            </div>
+        </div>
+
+    </div>
+
+    <!--遮罩-->
+    <div class="myshade" id="myshade"></div>
+</body>
+</html>
